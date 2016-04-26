@@ -17,7 +17,7 @@ import domain.PersonDomainModel;
 public class Person extends PersonDomainModel {
 
     public Person() {
-        this(null, null, null, (Integer) null, null, null);
+        
     }
 
     public Person(String firstName, String lastName, String street, int postalCode, String city, Object birthday ) {
@@ -29,6 +29,30 @@ public class Person extends PersonDomainModel {
         this.setPostalCode(postalCode);
         this.setCity(city);
         this.setBirthday((LocalDate.of(1999, 2, 21)));
+    }
+    public StringProperty getFirstNameProperty()
+    {
+    	return new SimpleStringProperty(getFirstName());    	
+    }
+    
+    public StringProperty getLastNameProperty()
+    {
+    	return new SimpleStringProperty(getLastName());    	
+    }
+    
+    public StringProperty getStreetProperty()
+    {
+    	return new SimpleStringProperty(getStreet());    	
+    }
+    
+    public StringProperty getCityProperty()
+    {
+    	return new SimpleStringProperty(getCity());    	
+    }
+    
+    public IntegerProperty getPostalCodeProperty()
+    {
+    	return new SimpleIntegerProperty(getPostalCode());    	
     }
 
 }
