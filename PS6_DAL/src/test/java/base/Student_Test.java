@@ -8,7 +8,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import domain.PersonDomainModel;
+
 public class Student_Test {
+	PersonDomainModel person = new PersonDomainModel();
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -27,8 +30,12 @@ public class Student_Test {
 	}
 
 	@Test
-	public void test() {
-		assertTrue(1==1);
+	public void Addtest() {
+		person.setFirstName("Paul");
+
+		person.setLastName("DiBenedetto");
+
+		PersonDAL.addPerson(person);
 	}
 
 }
